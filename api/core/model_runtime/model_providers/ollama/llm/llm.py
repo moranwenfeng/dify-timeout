@@ -230,7 +230,7 @@ class OllamaLargeLanguageModel(LargeLanguageModel):
                     data["images"] = images
 
         # send a post request to validate the credentials
-        response = requests.post(endpoint_url, headers=headers, json=data, timeout=(10, 300), stream=stream)
+        response = requests.post(endpoint_url, headers=headers, json=data, timeout=(10, 3000), stream=stream)
 
         response.encoding = "utf-8"
         if response.status_code != 200:
